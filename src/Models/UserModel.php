@@ -8,4 +8,9 @@ class UserModel extends Model
     {
         return $this->selectRecords("user");
     }
+    function showCat()
+    {
+        return $this->selectRecords("category");
+    }
+
 }

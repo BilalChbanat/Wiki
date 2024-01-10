@@ -127,6 +127,19 @@ class Model
         return $result;
     }
 
+    function statics()
+    {
+        $sql = "SELECT COUNT(*) AS $ FROM category;";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $result = $stmt->execute();
+
+        $this->pdo = null;
+
+        return $result;
+    }
+
 
     public function query($query)
     {
