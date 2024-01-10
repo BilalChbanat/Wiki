@@ -1,4 +1,4 @@
-# PHP-Freamwork-Skeleton
+# Wiki gestion des articles
 
 1. Clone the project
 2. Run `composer dump-autoload`
