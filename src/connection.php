@@ -1,41 +1,51 @@
 <?php
-namespace config;
+namespace App;
 
 use PDO;
 use PDOException;
 
 class Connection
 {
-
-    private static $instance = null;
+    private static $instance;
     private $connection;
 
+    private $host = 'localhost';
+    private $username = 'root';
+    private $password = '';
+    private $database = 'wiki';
 
-    public function __construct()
+    private function __construct()
     {
-        $host = "localhost";
-        $dbname = "wiki";
-        $username = "root";
-        $password = "";
-
-        try {
-            $this->connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "connection failed:" . $e->getMessage();
-        }
+        $this->connect();
     }
 
-    public static function getdatabaseObj()
+    public static function getInstance()
     {
-        if (self::$instance === null) {
+        if (!self::$instance) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    public function GetConnection()
+    private function connect()
+    {
+        try {
+            $dsn = "mysql:host={$this->host};dbname={$this->database}";
+            $this->connection = new PDO($dsn, $this->username, $this->password);
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die('Connection failed: ' . $e->getMessage());
+        }
+    }
+
+    public function getConnection()
     {
         return $this->connection;
     }
+
+    public function closeConnection()
+    {
+        $this->connection = null;
+    }
+
 }
