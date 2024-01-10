@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/images/logo.svg">
+    <link rel="icon" href="./assets/images/logo.svg">
     <title>Wiki Admin Dashboard</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="user">
-                    <img src="../../../public/images/uploads/person1.svg" alt="">
+                    <img src="./assets/images/uploads/person1.svg" alt="">
                 </div>
             </div>
 
@@ -239,7 +239,7 @@
                     <table>
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer01.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer01.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>David <br> <span>Italy</span></h4>
@@ -248,7 +248,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer01.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer01.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>Amit <br> <span>India</span></h4>
@@ -257,7 +257,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer02.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer02.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>David <br> <span>Italy</span></h4>
@@ -266,7 +266,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer01.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer01.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>Amit <br> <span>India</span></h4>
@@ -275,7 +275,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer02.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer02.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>David <br> <span>Italy</span></h4>
@@ -284,7 +284,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer01.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer01.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>Amit <br> <span>India</span></h4>
@@ -293,7 +293,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer01.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer01.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>David <br> <span>Italy</span></h4>
@@ -302,7 +302,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="../../../public/images/uploads/customer02.jpg" alt=""></div>
+                                <div class="imgBx"><img src="./assets/images/uploads/customer02.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>Amit <br> <span>India</span></h4>
