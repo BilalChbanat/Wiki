@@ -1,8 +1,5 @@
 <?php
-
 namespace App\Controllers;
-
-use App\Controller;
 
 class HomeController extends Controller
 {
@@ -10,6 +7,6 @@ class HomeController extends Controller
     {
         $this->render('index');
     }
-    
-    
+
+
 }

@@ -1,7 +1,9 @@
 <?php
- namespace App\Model;
- use PDO;
- use PDOException;
+namespace App\Models;
+
+use PDO;
+use PDOException;
+
 class Model
 {
     protected $pdo;

@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace App\Models;
 
 class UserModel extends Model
 {

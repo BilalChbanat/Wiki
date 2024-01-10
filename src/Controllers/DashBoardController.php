@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Controllers;
 
-use App\Controller;
-use App\Model\UserModel;
+use App\Models\UserModel;
 
-class DashBoardController extends Controller
+class DashboardController extends Controller
 {
     public function index()
     {
-        $user = (new UserModel)->showUser();
+        $user = (new UserModel())->showUser();
         var_dump($user);
         $this->render('dashboard', ["user" => $user]);
     }
