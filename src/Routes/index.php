@@ -18,11 +18,13 @@ $router->post('/updateAction', DashboardController::class, 'updateAction');
 // $router->get('/dashboard', DashboardController::class, 'index');
 // $router->get('/user', HomeController::class, 'user');
 
+//tags
 $router->get('/tag', TagsController::class, 'index');
 $router->get('/addTag', TagsController::class, 'add');
 $router->post('/addActionTag', TagsController::class, 'addActionTag');
 $router->get('/updateTag', TagsController::class, 'updateTag');
-
+$router->post('/updateActionTag', TagsController::class, 'updateActionTag');
+$router->get('/deleteActionTag', TagsController::class, 'deleteActionTag');
 
 
 

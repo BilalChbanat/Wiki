@@ -29,16 +29,16 @@ class TagsController extends Controller
 
         $insertedId = $new->insertRecord("tag", $tagfields);
     }
-    public function update()
+    public function updateTag()
     {
         $id = $_GET['id'];
 
         if ($id !== "") {
             $viewmodel = new TagsModel();
-            $category = $viewmodel->selectSingleRecords("tag", "*", "id = $id");
+            $tag = $viewmodel->selectSingleRecords("tag", "*", "id = $id");
 
-            if ($category) {
-                $this->render('updateCat', ['tag' => $category]);
+            if ($tag) {
+                $this->render('updateTag', ['tag' => $tag]);
             } else {
                 echo "<h1>ERROR 404: Bad Request</h1>";
             }
@@ -48,7 +48,7 @@ class TagsController extends Controller
     }
 
 
-    public function updateAction()
+    public function updateActionTag()
     {
         extract($_POST);
         $viewmodel = new TagsModel();
@@ -59,16 +59,16 @@ class TagsController extends Controller
             'name' => $name,
         );
 
-        $insertedId = $viewmodel->updateRecord("category", $tagsfields, "$id");
+        $insertedId = $viewmodel->updateRecord("tag", $tagsfields, "$id");
     }
 
-    public function deleteAction()
+    public function deleteActionTag()
     {
         $id = $_GET['id'];
         $viewmodel = new TagsModel();
-        $result = $viewmodel->deleteRecord("category", "id", $id);
+        $result = $viewmodel->deleteRecord("tag", "id", $id);
         echo '<script type="text/javascript">';
-        echo 'window.location.href = "/dashboard";';
+        echo 'window.location.href = "/tag";';
         echo '</script>';
         exit();
 
