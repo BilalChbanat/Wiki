@@ -16,11 +16,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="/tag">
                 <span class="icon">
                     <ion-icon name="people-outline"></ion-icon>
                 </span>
-                <span class="title">Customers</span>
+                <span class="title">Tags</span>
             </a>
         </li>
 

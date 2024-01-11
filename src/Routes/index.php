@@ -4,15 +4,18 @@ use App\Router;
 
 use App\Controllers\HomeController;
 use App\Controllers\DashboardController;
+use App\Controllers\TagsController;
 
 $router = new Router();
 
 $router->get('/', HomeController::class, 'index');
 $router->get('/dashboard', DashboardController::class, 'index');
+$router->get('/tag', TagsController::class, 'index');
 $router->get('/addCat', DashboardController::class, 'add');
 $router->get('/deleteAction', DashboardController::class, 'deleteAction');
 $router->post('/addAction', DashboardController::class, 'addAction');
 $router->get('/update', DashboardController::class, 'update');
+$router->get('/updateTag', DashboardController::class, 'updateTag');
 $router->post('/updateAction', DashboardController::class, 'updateAction');
 // $router->get('/dashboard', DashboardController::class, 'index');
 // $router->get('/user', HomeController::class, 'user');
