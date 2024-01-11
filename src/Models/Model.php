@@ -60,9 +60,6 @@ class Model
         // $result = $stmt->fetchAll();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-
         // Close the statement
         $this->pdo = null;
 
@@ -72,7 +69,7 @@ class Model
     function selectSingleRecords($table, $columns = "*", $where = null)
     {
         // Use prepared statements to prevent SQL injection
-        $sql = "SELECT $columns FROM $table";
+        $sql = "SELECT $columns FROM $table ";
 
         if ($where !== null) {
             $sql .= " WHERE $where ;";
@@ -100,7 +97,7 @@ class Model
             $args[] = "$key = ?";
         }
 
-        $sql = "UPDATE $table SET " . implode(',', $args) . " WHERE team_id = $id";
+        $sql = "UPDATE $table SET " . implode(',', $args) . " WHERE id = $id";
 
         $stmt = $this->pdo->prepare($sql);
 

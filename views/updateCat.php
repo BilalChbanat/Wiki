@@ -8,10 +8,13 @@
 </head>
 
 <body>
-    <form action="http://localhost:8000/addAction" method="post">
-        <input type="text" name="name">
-        <button type="submit"> ADD </button>
+
+    <form action="http://localhost:8000/updateAction?id=<?= $category['id'] ?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $category['id'] ?>" id="name" class="form-control" required>
+        <input type="text" name="name" value="<?php echo $category['name'] ?>">
+        <button type="submit">Update</button>
     </form>
+
 </body>
 
 </html>

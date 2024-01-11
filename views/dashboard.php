@@ -109,8 +109,8 @@
                                         <?= $cat['name'] ?>
                                     </td>
                                     <td>
-                                        <a class="status inProgress" href="">Update</a>
-                                        <a class="status return" href="">DELETE</a>
+                                        <a class="status inProgress" href="http://localhost:8000/update?id=<?= $cat['id'] ?>">Update</a>
+                                        <a class="status return" href="http://localhost:8000/deleteAction?id=<?= $cat['id'] ?>">DELETE</a>
                                     </td>
 
                                 </tr>
@@ -118,7 +118,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <!-- ================= New Customers ================ -->
                 <div class="recentCustomers">
                     <div class="cardHeader">
