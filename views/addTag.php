@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="http://localhost:8000/addTag" method="post">
+    <form action="http://localhost:8000/addActionTag" method="post">
         <input type="text" name="name">
         <button type="submit"> ADD </button>
     </form>

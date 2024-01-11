@@ -18,7 +18,7 @@ class TagsController extends Controller
         $this->render('addTag');
     }
 
-    public function addAction()
+    public function addActionTag()
     {
         extract($_POST);
         $new = new TagsModel();
@@ -29,23 +29,23 @@ class TagsController extends Controller
 
         $insertedId = $new->insertRecord("tag", $tagfields);
     }
-    // public function update()
-    // {
-    //     $id = $_GET['id'];
+    public function update()
+    {
+        $id = $_GET['id'];
 
-    //     if ($id !== "") {
-    //         $viewmodel = new TagsModel();
-    //         $category = $viewmodel->selectSingleRecords("tag", "*", "id = $id");
+        if ($id !== "") {
+            $viewmodel = new TagsModel();
+            $category = $viewmodel->selectSingleRecords("tag", "*", "id = $id");
 
-    //         if ($category) {
-    //             $this->render('updateCat', ['tag' => $category]);
-    //         } else {
-    //             echo "<h1>ERROR 404: Bad Request</h1>";
-    //         }
-    //     } else {
-    //         echo '<h1>ERROR 404: Page Not Found</h1>';
-    //     }
-    // }
+            if ($category) {
+                $this->render('updateCat', ['tag' => $category]);
+            } else {
+                echo "<h1>ERROR 404: Bad Request</h1>";
+            }
+        } else {
+            echo '<h1>ERROR 404: Page Not Found</h1>';
+        }
+    }
 
 
     public function updateAction()
