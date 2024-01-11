@@ -1,16 +1,14 @@
 <?php
 namespace App\Models;
 
+
 class UserModel extends Model
 {
 
-    function showUser()
+    function index()
     {
-        return $this->selectRecords("user");
+        return;
     }
-    function showCat()
-    {
-        return $this->selectRecords("category");
-    }
+
 
 }

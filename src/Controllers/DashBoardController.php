@@ -1,15 +1,15 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\UserModel;
+use App\Models\DashBoardModel;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $new = new UserModel();
+        $new = new DashBoardModel();
         $user = $new->showUser();
-        $newcat = new UserModel();
+        $newcat = new DashBoardModel();
         $category = $newcat->showCat();
 
         $this->render('dashboard', ["user" => $user, "category" => $category]);
@@ -24,7 +24,7 @@ class DashboardController extends Controller
     public function addAction()
     {
         extract($_POST);
-        $new = new UserModel();
+        $new = new DashBoardModel();
 
         $categoryfields = array(
             'name' => $name,
@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $id = $_GET['id'];
 
         if ($id !== "") {
-            $viewmodel = new UserModel();
+            $viewmodel = new DashBoardModel();
             $category = $viewmodel->selectSingleRecords("category", "*", "id = $id");
 
             if ($category) {
@@ -54,7 +54,7 @@ class DashboardController extends Controller
     public function updateAction()
     {
         extract($_POST);
-        $viewmodel = new UserModel();
+        $viewmodel = new DashBoardModel();
 
         $id = $_GET['id'];
         
@@ -68,7 +68,7 @@ class DashboardController extends Controller
     public function deleteAction()
     {
         $id = $_GET['id'];
-        $viewmodel = new UserModel();
+        $viewmodel = new DashBoardModel();
         $result = $viewmodel->deleteRecord("category", "id", $id);
         echo '<script type="text/javascript">';
         echo 'window.location.href = "/dashboard";';

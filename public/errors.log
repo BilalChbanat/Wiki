@@ -5,3 +5,4 @@ Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wiki.
 Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wiki.teams' doesn't exist
 Database error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null
 Database error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null
+Database error: SQLSTATE[HY000]: General error: 1364 Field 'img' doesn't have a default value

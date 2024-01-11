@@ -5,6 +5,7 @@ use App\Router;
 use App\Controllers\HomeController;
 use App\Controllers\DashboardController;
 use App\Controllers\TagsController;
+use App\Controllers\UserController;
 
 $router = new Router();
 
@@ -26,7 +27,9 @@ $router->get('/updateTag', TagsController::class, 'updateTag');
 $router->post('/updateActionTag', TagsController::class, 'updateActionTag');
 $router->get('/deleteActionTag', TagsController::class, 'deleteActionTag');
 
-
+//user signup
+$router->get('/signup', UserController::class, 'signup');
+$router->post('/signupAction', UserController::class, 'signupAction');
 
 // $router->post('/insert', HomeController::class, 'insert');
 
