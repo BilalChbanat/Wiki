@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 use App\Router;
 
 use App\Controllers\HomeController;
@@ -30,6 +30,10 @@ $router->get('/deleteActionTag', TagsController::class, 'deleteActionTag');
 //user signup
 $router->get('/signup', UserController::class, 'signup');
 $router->post('/signupAction', UserController::class, 'signupAction');
+
+//user login
+$router->get('/login', UserController::class, 'login');
+$router->post('/loginAction', UserController::class, 'loginAction');
 
 // $router->post('/insert', HomeController::class, 'insert');
 

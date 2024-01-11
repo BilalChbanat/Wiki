@@ -24,7 +24,7 @@
                     <ul class="tracking-wide font-medium  text-sm 
                             flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full">
                         <li>
-                            <a href="#" class="block md:px-4 transition hover:text-blue-700">
+                            <a href="/" class="block md:px-4 transition hover:text-blue-700">
                                 <span>Home</span>
                             </a>
                         </li>
@@ -37,20 +37,18 @@
                     </ul>
                 </div>
 
-                <div class="w-full min-w-max space-y-2 
-                        border-blue-200 lg:space-y-0 sm:w-max lg:border-l ">
-                    <button type="button" title="Start buying"
-                        class="w-full py-3 px-6 text-center rounded-full transition active:bg-blue-200  focus:bg-blue-100 sm:w-max">
+                <div class="w-[14rem] flex px-8 justify-between">
+                    <a href="/signup" title="Start buying" class="">
                         <span class="block text-blue-950  font-semibold text-sm">
                             Sign up
                         </span>
-                    </button>
-                    <button type="button" title="Start buying"
-                        class="w-full py-3 px-6 text-center rounded-full transition bg-blue-300 hover:bg-blue-100 active:bg-blue-400 focus:bg-blue-300 sm:w-max">
+                    </a>
+                    <div class="border"></div>
+                    <a href="/login" title="Start buying" class="">
                         <span class="block text-blue-950 font-semibold text-sm">
                             Login
                         </span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

@@ -11,16 +11,16 @@
 
 <body>
     <?php require_once('includes/header.php'); ?>
-    <div class="relative py-16 bg-gradient-to-tr from-blue-950 to-purple-600">
+    <div class="relative py-16 bg-gradient-to-tr from-blue-950 to-purple-600 h-[100vh] flex">
         <div class="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
             <div class="m-auto space-y-8 md:w-8/12 lg:w-6/12 xl:w-6/12">
                 <div class="rounded-3xl border border-gray-100 bg-white  shadow-gray-600/80 backdrop-blur-2xl">
                     <div class="p-8 py-12 sm:p-16 ">
                         <div class="flex items-center justify-center mb-8">
-                            <img src="../public/images/logo.svg" loading="lazy" class="ml-4 w-[3rem]" alt="wiki logo" />
+                            <img src="./assets/images/logo.svg" loading="lazy" class="ml-4 w-[3rem]" alt="wiki logo" />
                             <h2 class=" text-2xl font-bold text-gray-800 ">Sign in to your account</h2>
                         </div>
-                        <form action="" method="POST" class="space-y-8">
+                        <form action="http://localhost:8000/loginAction" method="POST" class="space-y-8">
                             <div class="space-y-2">
                                 <label for="email" class="text-gray-600 ">Email</label>
                                 <input type="email" name="email" id="email" autocomplete="username"
@@ -34,7 +34,7 @@
                                         <span class="text-sm text-primary">Forgot your password ?</span>
                                     </button>
                                 </div>
-                                <input type="password" name="pwd" id="pwd" autocomplete="current-password"
+                                <input type="password" name="password" id="pwd" autocomplete="current-password"
                                     class="focus:outline-none block w-full rounded-md border border-gray-200  bg-transparent px-4 py-3 text-gray-600 transition duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 focus:ring-cyan-900" />
                             </div>
 

@@ -6,7 +6,7 @@ class DashBoardModel extends Model
 
     function showUser()
     {
-        return $this->selectRecords("user");
+        return $this->selectRecordsUser();
     }
     function showCat()
     {
