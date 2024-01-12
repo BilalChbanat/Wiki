@@ -37,19 +37,54 @@
                     </ul>
                 </div>
 
-                <div class="w-[14rem] flex px-8 justify-between">
-                    <a href="/signup" title="Start buying" class="">
-                        <span class="block text-blue-950  font-semibold text-sm">
-                            Sign up
-                        </span>
-                    </a>
-                    <div class="border"></div>
-                    <a href="/login" title="Start buying" class="">
-                        <span class="block text-blue-950 font-semibold text-sm">
-                            Login
-                        </span>
-                    </a>
-                </div>
+                <?php if (isset($_SESSION['email'])): ?>
+
+                    <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation"
+                        class="text-white bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+                        type="button">Options<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdownInformation"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                        <div class="px-4 py-3 text-sm text-gray-900 ">
+                            <div>
+                                <?php echo $_SESSION['firstname'], " ", $_SESSION['lastname'] ?>
+                            </div>
+                            <div class="font-medium truncate">
+                                <?php echo $_SESSION['email'] ?>
+                            </div>
+                        </div>
+                        <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownInformationButton">
+
+                        </ul>
+                        <div class="py-2">
+                            <a href="http://localhost:8000/logout"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Sign
+                                out</a>
+                        </div>
+                    </div>
+
+                <?php endif; ?>
+                <?php if (!isset($_SESSION['email'])): ?>
+                    <div class="w-[14rem] flex px-8 justify-between">
+                        <a href="/signup" title="Start buying" class="">
+                            <span class="block text-blue-950  font-semibold text-sm">
+                                Sign up
+                            </span>
+                        </a>
+                        <div class="border"></div>
+                        <a href="/login" title="Start buying" class="">
+                            <span class="block text-blue-950 font-semibold text-sm">
+                                Login
+                            </span>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -95,11 +95,16 @@ class UserController extends Controller
                 header("Location: /login");
             }
 
-            // Close the database connection
-            // $viewmodel->closeConnection();
         } else {
-            // Email or password not provided
             echo "Please provide an email and password";
         }
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        echo '<script type="text/javascript">';
+        echo 'window.location.href = "/login";';
+        echo '</script>';
     }
 }

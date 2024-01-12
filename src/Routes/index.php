@@ -6,6 +6,7 @@ use App\Controllers\HomeController;
 use App\Controllers\DashboardController;
 use App\Controllers\TagsController;
 use App\Controllers\UserController;
+use App\Controllers\WikiController;
 
 $router = new Router();
 
@@ -35,6 +36,15 @@ $router->post('/signupAction', UserController::class, 'signupAction');
 $router->get('/login', UserController::class, 'login');
 $router->post('/loginAction', UserController::class, 'loginAction');
 
+//user login
+$router->post('/logout', UserController::class, 'logout');
 // $router->post('/insert', HomeController::class, 'insert');
+
+//wiki 
+$router->get('/add', WikiController::class, 'add');
+// $router->get('/deleteAction', DashboardController::class, 'deleteAction');
+// $router->post('/addAction', DashboardController::class, 'addAction');
+// $router->get('/update', DashboardController::class, 'update');
+// $router->post('/updateAction', DashboardController::class, 'updateAction');
 
 $router->dispatch();

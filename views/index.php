@@ -11,7 +11,7 @@
     <title>wiki</title>
 </head>
 
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden">
     <?php require_once('includes/header.php'); ?>
     <div class="relative bg-blue-50 pb-16">
         <div class="container m-auto px-6 pt-32 md:px-12 lg:pt-[4.8rem] lg:px-7">
@@ -46,8 +46,8 @@
                     </form>
                 </div>
                 <div class="">
-                    <img src="./assets/images/logo.svg" class="hidden relative w-[26vw] h-auto lg:block"
-                        alt="Wiki" loading="lazy" width="100" height="450">
+                    <img src="./assets/images/logo.svg" class="hidden relative w-[26vw] h-auto lg:block" alt="Wiki"
+                        loading="lazy" width="100" height="450">
                 </div>
             </div>
 
@@ -134,8 +134,12 @@
         </div>
     </div>
     <div class="py-16">
-        <div class="pl-16 mb-16 md:w-2/3 lg:w-1/2">
+        <div class="px-[8rem] pl-[10rem] mb-16  flex justify-between w-[100vw]">
             <h2 class="mb-4 text-2xl font-bold text-gray-800  md:text-4xl">Latest wikis </h2>
+            <a href="http://localhost:8000/add"
+                class="text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded cursor-pointer">
+                Button
+            </a>
         </div>
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="grid gap-12 md:gap-6 md:grid-cols-2 lg:gap-12">
@@ -206,6 +210,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 
 </html>
