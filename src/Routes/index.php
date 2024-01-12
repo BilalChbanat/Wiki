@@ -43,7 +43,7 @@ $router->post('/logout', UserController::class, 'logout');
 //wiki 
 $router->get('/add', WikiController::class, 'add');
 // $router->get('/deleteAction', DashboardController::class, 'deleteAction');
-// $router->post('/addAction', DashboardController::class, 'addAction');
+$router->post('/addWikiAction', WikiController::class, 'addWikiAction');
 // $router->get('/update', DashboardController::class, 'update');
 // $router->post('/updateAction', DashboardController::class, 'updateAction');
 

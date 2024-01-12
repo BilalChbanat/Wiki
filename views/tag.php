@@ -114,7 +114,8 @@
                                         <a class="status inProgress"
                                             href="http://localhost:8000/updateTag?id=<?= $tag['id'] ?>">Update</a>
                                         <a class="status return"
-                                            href="http://localhost:8000/deleteActionTag?id=<?= $tag['id'] ?>">DELETE</a>
+                                            href="http://localhost:8000/deleteActionTag?id=<?= $tag['id'] ?>"
+                                            onclick="return confirm('Do you really want to Delete ?');">DELETE</a>
                                     </td>
 
                                 </tr>

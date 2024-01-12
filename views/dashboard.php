@@ -109,8 +109,11 @@
                                         <?= $cat['name'] ?>
                                     </td>
                                     <td>
-                                        <a class="status inProgress" href="http://localhost:8000/update?id=<?= $cat['id'] ?>">Update</a>
-                                        <a class="status return" href="http://localhost:8000/deleteAction?id=<?= $cat['id'] ?>">DELETE</a>
+                                        <a class="status inProgress"
+                                            href="http://localhost:8000/update?id=<?= $cat['id'] ?>">Update</a>
+                                        <a class="status return"
+                                            href="http://localhost:8000/deleteAction?id=<?= $cat['id'] ?>"
+                                            onclick="return confirm('Do you really want to Delete ?');">DELETE</a>
                                     </td>
 
                                 </tr>

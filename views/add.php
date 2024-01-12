@@ -109,7 +109,7 @@
                             required>
                     </div>
                     <div class="mb-4">
-                        <select class="border p-2 rounded w-full">
+                        <select name="category" class="border p-2 rounded w-full">
                             <?php foreach ($category as $cat): ?>
                                 <option value="<?= $cat['id'] ?>">
                                     <?php echo $cat['name']; ?>
@@ -118,7 +118,7 @@
                         </select>
                     </div>
                     <div class="h-[6rem]">
-                        <select class="border p-2 rounded w-[100vw]" x-cloak id="select">
+                        <select name="tags[]" class="border p-2 rounded w-[100vw]" x-cloak id="select">
                             <?php foreach ($tags as $tag): ?>
                                 <option value="<?= $tag['id'] ?>">
                                     <?php echo $tag['name']; ?>
@@ -232,7 +232,7 @@
                                 <p class="text-xs text-gray-500 ">SVG, PNG, JPG or GIF (MAX.
                                     800x400px)</p>
                             </div>
-                            <input id="dropzone-file" type="file" class="hidden" />
+                            <input id="dropzone-file" type="file" class="hidden" name="image" />
                         </label>
                     </div>
 
