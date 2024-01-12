@@ -12,6 +12,13 @@
 
 <body>
     <!-- =============== Navigation ================ -->
+    <?php
+    if ($_SESSION['role_id'] != 2){
+        echo '<script type="text/javascript">';
+        echo 'window.location.href = "/";';
+        echo '</script>';
+    }
+    ?>
     <div class="container">
         <?php
         require_once('includes/dashboardNav.php');

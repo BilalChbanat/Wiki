@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 use App\Router;
 
 use App\Controllers\HomeController;
@@ -37,7 +38,7 @@ $router->get('/login', UserController::class, 'login');
 $router->post('/loginAction', UserController::class, 'loginAction');
 
 //user login
-$router->post('/logout', UserController::class, 'logout');
+$router->get('/logout', UserController::class, 'logout');
 // $router->post('/insert', HomeController::class, 'insert');
 
 //wiki 

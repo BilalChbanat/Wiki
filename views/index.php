@@ -136,10 +136,12 @@
     <div class="py-16">
         <div class="px-[8rem] pl-[10rem] mb-16  flex justify-between w-[100vw]">
             <h2 class="mb-4 text-2xl font-bold text-gray-800  md:text-4xl">Latest wikis </h2>
-            <a href="http://localhost:8000/add"
-                class="text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded cursor-pointer">
-                Button
-            </a>
+            <?php if (isset($_SESSION['email'])): ?>
+                <a href="http://localhost:8000/add"
+                    class="text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded cursor-pointer">
+                    Add wiki
+                </a>
+            <?php endif; ?>
         </div>
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="grid gap-12 md:gap-6 md:grid-cols-2 lg:gap-12">

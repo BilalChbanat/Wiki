@@ -11,8 +11,13 @@ class Model
 
     public function __construct()
     {
-        $this->pdo = new PDO("mysql:host=" . 'localhost' . ";dbname=" . 'wiki', 'root', '');
+        try {
+            $this->pdo = new PDO("mysql:host=" . 'localhost' . ";dbname=" . 'wiki', 'root', '');
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }
     }
+
 
 
     function insertRecord($table, $data)

@@ -63,9 +63,7 @@
 
                         </ul>
                         <div class="py-2">
-                            <a href="http://localhost:8000/logout"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Sign
-                                out</a>
+                            <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
                         </div>
                     </div>
 

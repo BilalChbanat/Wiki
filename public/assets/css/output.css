@@ -1121,6 +1121,10 @@ video {
   width: 75vw;
 }
 
+.w-\[76vw\] {
+  width: 76vw;
+}
+
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -1144,18 +1148,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[7vw\] {
-  width: 7vw;
-}
-
-.w-\[79vw\] {
-  width: 79vw;
-}
-
-.w-\[76vw\] {
-  width: 76vw;
 }
 
 .max-w-full {
@@ -1237,6 +1229,10 @@ video {
 
 .transform-none {
   transform: none;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 
 .cursor-pointer {

@@ -27,7 +27,7 @@ class TagsController extends Controller
             'name' => $name,
         );
 
-        $insertedId = $new->insertRecord("tag", $tagfields);
+        $insertedId = $new->insertTags("tag", $tagfields);
     }
     public function updateTag()
     {
@@ -35,7 +35,7 @@ class TagsController extends Controller
 
         if ($id !== "") {
             $viewmodel = new TagsModel();
-            $tag = $viewmodel->selectSingleRecords("tag", "*", "id = $id");
+            $tag = $viewmodel->selectSingleTag("tag", "*", "id = $id");
 
             if ($tag) {
                 $this->render('updateTag', ['tag' => $tag]);
@@ -59,7 +59,7 @@ class TagsController extends Controller
             'name' => $name,
         );
 
-        $insertedId = $viewmodel->updateRecord("tag", $tagsfields, "$id");
+        $insertedId = $viewmodel->updateTag("tag", $tagsfields, "$id");
     }
 
     public function deleteActionTag()

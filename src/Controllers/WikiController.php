@@ -14,6 +14,14 @@ class WikiController extends Controller
 
     // }
 
+    public function index()
+    {
+        $wikis = new WikiModel();
+        $res = $wikis->getAllWikis();
+        return $this->render('index', $res);
+
+    }
+
     public function add()
     {
         $new = new WikiModel();
@@ -25,25 +33,23 @@ class WikiController extends Controller
 
     }
 
-    protected function addWikiAction()
+    public function addWikiAction()
     {
         extract($_POST);
 
         $new_logo;
 
         if (isset($_FILES["image"])) {
+
             $file = $_FILES["image"];
-            // File properties
+
             $fileName = $file["name"];
             $fileTmpName = $file["tmp_name"];
-            // $fileSize = $file["size"];
             $fileError = $file["error"];
 
             $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
 
-            // Generate a unique filename to avoid overwriting
-            $newFileName = $Name . "_" . uniqid('', true) . "." . $fileExt;
-
+            $newFileName = $fileName . "_" . uniqid('', true) . "." . $fileExt;
 
             $new_logo = $newFileName;
 
@@ -57,73 +63,28 @@ class WikiController extends Controller
         }
 
         $viewmodel = new WikiModel();
-        $lastInsertedImageId = $viewmodel->insertRecord("images", ['link' => $new_logo]);
+        $lastInsertedImageId = $viewmodel->insertWiki("images", ['link' => $new_logo]);
 
-        $teamfields = array(
-
+        $wikifield = array(
             'title' => $title,
             'description' => $description,
-            'category' => $category,
-            'city' => $city,
-            'tags[]' => $tags,
-            'image' => $lastInsertedImageId
-
+            'category_id' => $category,
+            'user_id' => $_SESSION['id'],
+            // 'tags' => $tags,
+            'img' => $lastInsertedImageId,
         );
-
-        $insertedId = $viewmodel->insertRecord("wikis", $teamfields);
-
-
+        $viewmodew = new WikiModel();
+        $insertedId = $viewmodew->insertWiki("wikis", $wikifield);
+        // var_dump($insertedId);
+        // die();
         if ($insertedId) {
-            $message = "Stadium inserted successfully!";
-            http_response_code(200);
-            echo json_encode([
-                "message" => $message,
-                "Id" => $insertedId
-            ]);
-        }
-    }
-    public function updateTag()
-    {
-        $id = $_GET['id'];
-
-        if ($id !== "") {
-            $viewmodel = new WikiModel();
-            $tag = $viewmodel->selectSingleRecords("wikis", "*", "id = $id");
-
-            if ($tag) {
-                $this->render('updateTag', ['wikis' => $tag]);
-            } else {
-                echo "<h1>ERROR 404: Bad Request</h1>";
-            }
-        } else {
-            echo '<h1>ERROR 404: Page Not Found</h1>';
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+            exit();
         }
     }
 
 
-    public function updateActionTag()
-    {
-        extract($_POST);
-        $viewmodel = new WikiModel();
 
-        $id = $_GET['id'];
-
-        $tagsfields = array(
-            'name' => $name,
-        );
-
-        $insertedId = $viewmodel->updateRecord("wikis", $tagsfields, "$id");
-    }
-
-    public function deleteActionTag()
-    {
-        $id = $_GET['id'];
-        $viewmodel = new WikiModel();
-        $result = $viewmodel->deleteRecord("wikis", "id", $id);
-        echo '<script type="text/javascript">';
-        echo 'window.location.href = "/";';
-        echo '</script>';
-        exit();
-
-    }
 }

@@ -90,7 +90,14 @@
     </style>
 </head>
 
-<body class="overflow-scroll bg-[#F3F4F6] h-full">
+<body class="overflow-x-hidden bg-[#F3F4F6] h-full">
+
+    <?php if (!isset($_SESSION['email'])){
+        echo '<script type="text/javascript">';
+        echo 'window.location.href = "/login";';
+        echo '</script>';
+    } ?>
+
     <?php require_once('includes/header.php'); ?>
 
     <div class="bg-gray-100 transition-colors duration-300 w-[100vw] h-[100vh] pt-[5rem]">
@@ -98,15 +105,16 @@
             <div class="bg-white shadow rounded-lg p-6">
                 <h1 class="text-xl font-semibold mb-4 text-gray-900">Wiki Information</h1>
                 <p class="text-gray-600  mb-6">Use a permanent address where you can receive mail.</p>
-                <form action="http://localhost:8000/addWikiAction" method="post">
+                <form action="http://localhost:8000/addWikiAction" method="post" enctype="multipart/form-data">
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <input type="text" placeholder="Wiki title" class="border p-2 rounded w-full" name="title"
                             required>
                     </div>
                     <div class="mb-4">
-                        <input type="email" placeholder="Email address" class="border p-2 rounded w-full" name="email"
-                            required>
+                        <input type="email" placeholder="Email address"
+                            class="border p-2 rounded w-full cursor-not-allowed" name="email" disabled
+                            value="<?= $_SESSION['email'] ?>">
                     </div>
                     <div class="mb-4">
                         <select name="category" class="border p-2 rounded w-full">
@@ -128,7 +136,7 @@
 
                         <div x-data="dropdown()" x-init="loadOptions()"
                             class="w-full md:w-1/2 flex flex-col items-center h-64 mx-auto">
-                            <input name="values" type="hidden" x-bind:value="selectedValues()">
+                            <!-- <input name="values" type="hidden" x-bind:value="selectedValues()"> -->
                             <div class="inline-block relative w-64">
                                 <div class="flex flex-col items-center relative">
                                     <div x-on:click="open" class=" rounded w-[76vw]">

@@ -20,7 +20,7 @@
                     <div class="relative flex p-1 rounded-full bg-white  border-blue-200 shadow-md md:p-2">
 
                         <input placeholder="Your favorite food"
-                            class="w-full p-4 rounded-full outline-none bg-transparent " type="text">
+                            class="w-full p-4 rounded-full outline-none bg-transparent " type="text" id="getName">
                         <button type="button" title="Start buying"
                             class="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-blue-200 to-blue-300 hover:to-blue-400 active:from-blue-400 focus:from-blue-400 md:px-12">
                             <span class="hidden text-blue-900 font-semibold md:block">
@@ -35,12 +35,11 @@
                     </div>
                 </form>
                 <!-- card -->
-                <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden 
+                <div id="searchResultsContainer" v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden 
                                         bg-white rounded-lg shadow-2xl  mt-4 w-100 mx-2">
                     <!-- media -->
                     <div class="h-64 w-auto md:w-1/2">
-                        <img class="inset-0 h-full w-full object-cover object-center"
-                            src="../../../public/images/fez.svg" />
+                        <img class="inset-0 h-full w-full object-cover object-center" src="./assets/images/fez.svg" />
                     </div>
                     <!-- content -->
                     <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
@@ -61,6 +60,23 @@
         </div>
     </div>
     <?php require_once('includes/footer.php'); ?>
+    <script>
+        $(document).ready(function () {
+            $('#getName').on("keyup", function () {
+                var getName = $(this).val();
+                $.ajax({
+                    method: 'POST',
+                    url: 'searchajax.php',
+                    data: { name: getName },
+                    success: function (response) {
+                        // Append the new search results to the container
+                        $("#searchResultsContainer").html(response);
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>
