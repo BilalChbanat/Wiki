@@ -137,7 +137,7 @@
 
                         <div x-data="dropdown()" x-init="loadOptions()"
                             class="w-full md:w-1/2 flex flex-col items-center h-64 mx-auto">
-                            <input name="values[]" type="hidden" x-bind:value="selectedValues()">
+                            <input name="values" type="hidden" x-bind:value="selectedValues()">
                             <div class="inline-block relative w-64">
                                 <div class="flex flex-col items-center relative">
                                     <div x-on:click="open" class=" rounded w-[76vw]">

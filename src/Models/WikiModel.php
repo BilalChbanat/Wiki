@@ -35,7 +35,7 @@ class WikiModel extends Model
 
             // Get the last inserted ID (if applicable)
             $lastId = $this->pdo->lastInsertId();
-         
+
 
         } catch (PDOException $e) {
             // Handle the exception
@@ -54,15 +54,15 @@ class WikiModel extends Model
             $result = $stmt->execute([$title, $description, $image, $user_id, $category_id]);
 
             $wikiId = $this->pdo->lastInsertId();
-            if ($result) {
-                $model = new WikiModel(); // Create an instance of WikiModel
-                $tagIds = $model->getTagIds(); // Call the getTagIds method
+            $tagId = explode(',', $_POST['values']);
 
-                // Insert each tag ID into wikitag
-                foreach ($tagIds as $tagId) {
+            if ($result) {
+                // Use $tagId directly in the foreach loop
+                $tagId = array_map('intval', $tagId);
+                foreach ($tagId as $tag) {
                     $sql = "INSERT INTO `wikitag`(`wiki_id`, `tag_id`) VALUES (?, ?)";
                     $stmt = $this->pdo->prepare($sql);
-                    $stmt->execute([$wikiId, $tagId]);
+                    $stmt->execute([$wikiId, $tag]);
                 }
             }
         } catch (PDOException $e) {
@@ -72,6 +72,9 @@ class WikiModel extends Model
             return false;
         }
     }
+
+
+
 
 
 

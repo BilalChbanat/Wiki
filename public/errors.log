@@ -301,3 +301,4 @@ Database error: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'A
 Database error: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Array' for column 'tag_id' at row 1
 Database error: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'tag_id' at row 1
 Database error: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'tag_id' at row 1
+Database error: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'tag_id' at row 1
