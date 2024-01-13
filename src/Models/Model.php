@@ -6,8 +6,8 @@ use PDOException;
 
 class Model
 {
-    protected $pdo;
-    protected $stmt;
+    public $pdo;
+    public $stmt;
 
     public function __construct()
     {
@@ -39,6 +39,19 @@ class Model
             $this->pdo = null;
 
             return $lastInsertId;
+        } catch (PDOException $e) {
+
+            error_log("Database error: " . $e->getMessage() . "\n", 3, "errors.log");
+            echo "Database error: " . $e->getMessage();
+            return false;
+        }
+    }
+    
+    function lastinsert()
+    {
+        try {
+            $stmt = $this->pdo->lastInsertId();
+            return $stmt;
         } catch (PDOException $e) {
 
             error_log("Database error: " . $e->getMessage() . "\n", 3, "errors.log");

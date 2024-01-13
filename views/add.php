@@ -92,7 +92,7 @@
 
 <body class="overflow-x-hidden bg-[#F3F4F6] h-full">
 
-    <?php if (!isset($_SESSION['email'])){
+    <?php if (!isset($_SESSION['email'])) {
         echo '<script type="text/javascript">';
         echo 'window.location.href = "/login";';
         echo '</script>';
@@ -126,7 +126,8 @@
                         </select>
                     </div>
                     <div class="h-[6rem]">
-                        <select name="tags[]" class="border p-2 rounded w-[100vw]" x-cloak id="select">
+                        <select name="tags[]" class="border p-2 rounded w-[100vw]" x-cloak id="select"
+                            multiple="multiple">
                             <?php foreach ($tags as $tag): ?>
                                 <option value="<?= $tag['id'] ?>">
                                     <?php echo $tag['name']; ?>
@@ -136,7 +137,7 @@
 
                         <div x-data="dropdown()" x-init="loadOptions()"
                             class="w-full md:w-1/2 flex flex-col items-center h-64 mx-auto">
-                            <!-- <input name="values" type="hidden" x-bind:value="selectedValues()"> -->
+                            <input name="values[]" type="hidden" x-bind:value="selectedValues()">
                             <div class="inline-block relative w-64">
                                 <div class="flex flex-col items-center relative">
                                     <div x-on:click="open" class=" rounded w-[76vw]">
@@ -247,7 +248,7 @@
                     <div class="mb-4">
                         <textarea name="description" id="description" cols="30" rows="10"></textarea>
                     </div>
-                    <button type="submit" id="theme-toggle"
+                    <button type="submit" name="addwiki" id="theme-toggle"
                         class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none transition-colors">
                         Add Wiki
                     </button>
