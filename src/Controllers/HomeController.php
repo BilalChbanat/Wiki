@@ -1,12 +1,28 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\HomeModel;
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
-    public function index()
+    public function created_at($time)
     {
-        $this->render('index');
+        $carbon = new Carbon($time);
+        return $carbon->diffForHumans();
     }
 
+    public function index()
+    {
+        $new = new HomeModel();
+        $wikis = $new->show();
+
+        // Format timestamps before passing them to the view
+        foreach ($wikis as &$wiki) {
+            $wiki['formatted_created_at'] = $this->created_at($wiki['created_at']);
+        }
+
+        $this->render('index', ["wikis" => $wikis]);
+    }
 
 }

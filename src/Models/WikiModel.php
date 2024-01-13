@@ -65,6 +65,11 @@ class WikiModel extends Model
                     $stmt->execute([$wikiId, $tag]);
                 }
             }
+
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/ ";';
+            echo '</script>';
+            exit();
         } catch (PDOException $e) {
             // Handle the exception
             error_log("Database error: " . $e->getMessage() . "\n", 3, "errors.log");
