@@ -132,4 +132,22 @@ class WikiController extends Controller
 
     }
 
+
+    public function updateWikiAction(){
+        extract($_POST);
+        $viewmodel = new WikiModel();
+
+        $id = $_GET['id'];
+
+        $tagsfields = array(
+            'title' => $title,
+            'description' => $description,
+            'category' => $category,
+
+            
+        );
+
+        $insertedId = $viewmodel->updateWiki("tag", $tagsfields, "$id");
+    }
+
 }

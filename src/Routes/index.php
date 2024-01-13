@@ -8,6 +8,7 @@ use App\Controllers\DashboardController;
 use App\Controllers\TagsController;
 use App\Controllers\UserController;
 use App\Controllers\WikiController;
+use App\Controllers\AuthorController;
 
 $router = new Router();
 
@@ -45,7 +46,12 @@ $router->get('/logout', UserController::class, 'logout');
 $router->get('/add', WikiController::class, 'add');
 // $router->get('/deleteAction', DashboardController::class, 'deleteAction');
 $router->post('/addWikiAction', WikiController::class, 'addWikiAction');
-// $router->get('/update', DashboardController::class, 'update');
-// $router->post('/updateAction', DashboardController::class, 'updateAction');
+$router->post('/updateWikiAction', WikiController::class, 'updateWikiAction');
+
+// author 
+$router->get('/DashboardAuthor', AuthorController::class, 'DashboardAuthor');
+$router->get('/updateWiki', AuthorController::class, 'updateWiki');
+
+
 
 $router->dispatch();

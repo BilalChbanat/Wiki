@@ -146,7 +146,7 @@
                                                 <template x-for="(option,index) in selected"
                                                     :key="options[option].value">
                                                     <div
-                                                        class="flex justify-center items-center m-1 font-medium py-1 px-1 bg-white rounded bg-gray-100 border ">
+                                                        class="flex justify-center items-center m-1 font-medium py-1 px-1 rounded bg-gray-100 border ">
                                                         <div class="text-xs font-normal leading-none max-w-full flex-initial x-model="
                                                             options[option] x-text="options[option].text"></div>
                                                         <div class="flex flex-auto flex-row-reverse">

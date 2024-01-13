@@ -119,6 +119,7 @@ class WikiModel extends Model
         return $this->deleteRecord($table, $column, $id);
     }
 
+
     function lastinserted()
     {
         return $this->lastinsert();

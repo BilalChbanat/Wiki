@@ -117,6 +117,38 @@ class Model
 
         return $result;
     }
+
+    function selectWithCat($table, $columns = "*", $where = null, $joinTable = null, $joinCondition = null, $limit = null)
+    {
+        // Use prepared statements to prevent SQL injection
+        $sql = "SELECT $columns FROM $table";
+
+        if ($joinTable !== null && $joinCondition !== null) {
+            // Use different aliases for the main table and the joined table
+            $sql .= " INNER JOIN $joinTable AS category ON $joinCondition";
+        }
+
+        if ($where !== null) {
+            $sql .= " WHERE $where";
+        }
+
+        if ($limit !== null) {
+            $sql .= " LIMIT $limit";
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+
+        // Execute the prepared statement
+        $stmt->execute();
+
+        // Get the result set
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Close the statement
+        $this->pdo = null;
+
+        return $result;
+    }
     
     function selectRecordsUser()
     {
