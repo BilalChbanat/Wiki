@@ -7,6 +7,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $new = new DashBoardModel();
         $user = $new->showUser();
         $newcat = new DashBoardModel();
@@ -18,6 +23,11 @@ class DashboardController extends Controller
     }
     public function add()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $this->render('addCat');
     }
 
@@ -34,6 +44,11 @@ class DashboardController extends Controller
     }
     public function update()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $id = $_GET['id'];
 
         if ($id !== "") {
@@ -57,7 +72,7 @@ class DashboardController extends Controller
         $viewmodel = new DashBoardModel();
 
         $id = $_GET['id'];
-        
+
         $categoryfields = array(
             'name' => $name,
         );

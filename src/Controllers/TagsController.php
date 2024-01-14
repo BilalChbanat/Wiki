@@ -7,6 +7,11 @@ class TagsController extends Controller
 {
     public function index()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $new = new TagsModel();
         $tags = $new->show();
         $this->render('tag', ["tags" => $tags]);
@@ -15,11 +20,17 @@ class TagsController extends Controller
 
     public function add()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $this->render('addTag');
     }
 
     public function addActionTag()
     {
+
         extract($_POST);
         $new = new TagsModel();
 
@@ -31,6 +42,11 @@ class TagsController extends Controller
     }
     public function updateTag()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $id = $_GET['id'];
 
         if ($id !== "") {
@@ -64,6 +80,11 @@ class TagsController extends Controller
 
     public function deleteActionTag()
     {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $id = $_GET['id'];
         $viewmodel = new TagsModel();
         $result = $viewmodel->deleteRecord("tag", "id", $id);

@@ -92,11 +92,6 @@
 
 <body class="overflow-x-hidden bg-[#F3F4F6] h-full">
 
-    <?php if (!isset($_SESSION['email'])) {
-        echo '<script type="text/javascript">';
-        echo 'window.location.href = "/login";';
-        echo '</script>';
-    } ?>
 
     <?php require_once('includes/header.php'); ?>
 

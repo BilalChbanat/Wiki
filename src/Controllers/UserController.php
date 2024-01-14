@@ -20,7 +20,6 @@ class UserController extends Controller
     {
         $viewmodel = new UserModel();
 
-        // Get form data
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $Firstname = $_POST['firstname'];
         $Lastname = $_POST['lastname'];
@@ -51,20 +50,16 @@ class UserController extends Controller
 
     public function loginAction()
     {
-        // Check if email and password are provided in the form
         if (isset($_POST['email']) && isset($_POST['password'])) {
             $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             $password = $_POST['password'];
 
-            // Instantiate the UserModel
             $viewmodel = new UserModel();
 
-            // Verify if the email exists in the database
             $user = $viewmodel->vrfyemail($email);
 
 
             if ($user) {
-                // If the email exists, verify the password
                 if (password_verify($password, $user['password'])) {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['firstname'] = $user['firstname'];

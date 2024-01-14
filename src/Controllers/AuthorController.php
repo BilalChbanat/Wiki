@@ -18,6 +18,11 @@ class AuthorController extends Controller
 
     public function add()
     {
+        if (!isset($_SESSION['email'])) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
         $this->render('addCat');
     }
 
@@ -40,8 +45,11 @@ class AuthorController extends Controller
             $viewmodel = new AuthorModel();
             $wikis = $viewmodel->selectsinglewiki("wikis", "*", "id = $id");
 
+            $viewCat = new AuthorModel();
+            $cat = $viewCat->showCat();
+
             if ($wikis) {
-                $this->render('updateWiki', ['wikis' => $wikis]);
+                $this->render('updateWiki', ['wikis' => $wikis, "cat" => $cat]);
             } else {
                 echo "<h1>ERROR 404: Bad Request</h1>";
             }
@@ -51,7 +59,7 @@ class AuthorController extends Controller
     }
 
 
-    public function updateAction()
+    public function updateWikiAction()
     {
         extract($_POST);
         $viewmodel = new AuthorModel();
@@ -59,10 +67,13 @@ class AuthorController extends Controller
         $id = $_GET['id'];
 
         $categoryfields = array(
-            'name' => $name,
+            'title' => $title,
+            'category_id' => $category_id,
+            'description' => $description
         );
 
-        $insertedId = $viewmodel->updateRecord("category", $categoryfields, "$id");
+        $insertedId = $viewmodel->updateWiki("wikis", $categoryfields, $id);
+
     }
 
     public function deleteAction()

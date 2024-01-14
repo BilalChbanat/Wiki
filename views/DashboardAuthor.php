@@ -12,17 +12,43 @@
 
 <body>
     <!-- =============== Navigation ================ -->
-    <?php
-    if (!isset($_SESSION['email'])) {
-        echo '<script type="text/javascript">';
-        echo 'window.location.href = "/";';
-        echo '</script>';
-    }
-    ?>
+
     <div class="container">
-        <?php
-        require_once('includes/dashboardNav.php');
-        ?>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="title">Wiki Author</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/DashboardAuthor">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Wikis</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
@@ -94,7 +120,7 @@
                 <div class="recentOrders">
                     <div class="cardHeader">
                         <h2>WIKIS</h2>
-                        <a href="/addCat" class="btn">Add</a>
+                        <a href="/add" class="btn">Add</a>
                     </div>
 
                     <table style="width:80vw; cursor:pointer;">

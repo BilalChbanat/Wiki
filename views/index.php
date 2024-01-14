@@ -137,9 +137,9 @@
         <div class="px-[8rem] pl-[10rem] mb-16  flex justify-between w-[100vw]">
             <h2 class="mb-4 text-2xl font-bold text-gray-800  md:text-4xl">Latest wikis </h2>
             <?php if (isset($_SESSION['email'])): ?>
-                <a href="http://localhost:8000/add"
+                <a href="http://localhost:8000/DashboardAuthor"
                     class="text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded cursor-pointer">
-                    Add wiki
+                    Go to Dashboard
                 </a>
             <?php endif; ?>
         </div>

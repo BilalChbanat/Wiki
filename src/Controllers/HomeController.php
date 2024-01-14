@@ -17,7 +17,6 @@ class HomeController extends Controller
         $new = new HomeModel();
         $wikis = $new->show();
 
-        // Format timestamps before passing them to the view
         foreach ($wikis as &$wiki) {
             $wiki['formatted_created_at'] = $this->created_at($wiki['created_at']);
         }
