@@ -120,19 +120,12 @@ class DashboardController extends Controller
             extract($_POST);
             $viewmodel = new DashBoardModel();
 
-            // Assuming $wiki_id is the ID of the wiki you want to accept
             $wikiId = $wiki_id;
 
-            // Update the statut to 1
             $viewmodel->updateWikiStatut($wikiId, 1);
 
-            // Get information about the accepted wiki
             $acceptedWiki = $viewmodel->getSingleWiki($wikiId);
 
-            // You can do something with $acceptedWiki, for example, display a success message or redirect to another page
-            // ...
-
-            // Redirect to the wikis page or wherever you want
             header('Location: /wikis');
             exit();
         } else {

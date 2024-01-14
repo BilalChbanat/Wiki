@@ -29,7 +29,6 @@ class DashBoardModel extends Model
             $stmt->bindParam(':id', $wikiId, PDO::PARAM_INT);
             $stmt->execute();
 
-            // You might want to handle success or return a result
             return true;
         } catch (PDOException $e) {
             error_log("Database error: " . $e->getMessage() . "\n", 3, "errors.log");
