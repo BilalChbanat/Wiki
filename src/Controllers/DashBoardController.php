@@ -21,6 +21,21 @@ class DashboardController extends Controller
 
 
     }
+    public function wikis()
+    {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+        }
+
+        $newW = new DashBoardModel();
+        $wikis = $newW->showWikis();
+
+        $this->render('wikis', ["wikis" => $wikis]);
+
+
+    }
     public function add()
     {
         if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
@@ -91,5 +106,39 @@ class DashboardController extends Controller
         exit();
 
     }
+
+    public function acceptWiki()
+    {
+        if (!isset($_SESSION['email']) || $_SESSION['role_id'] != 2) {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "/";';
+            echo '</script>';
+            return;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            extract($_POST);
+            $viewmodel = new DashBoardModel();
+
+            // Assuming $wiki_id is the ID of the wiki you want to accept
+            $wikiId = $wiki_id;
+
+            // Update the statut to 1
+            $viewmodel->updateWikiStatut($wikiId, 1);
+
+            // Get information about the accepted wiki
+            $acceptedWiki = $viewmodel->getSingleWiki($wikiId);
+
+            // You can do something with $acceptedWiki, for example, display a success message or redirect to another page
+            // ...
+
+            // Redirect to the wikis page or wherever you want
+            header('Location: /wikis');
+            exit();
+        } else {
+            echo '<h1>ERROR 404: Page Not Found</h1>';
+        }
+    }
+
 
 }

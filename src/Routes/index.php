@@ -19,6 +19,8 @@ $router->get('/deleteAction', DashboardController::class, 'deleteAction');
 $router->post('/addAction', DashboardController::class, 'addAction');
 $router->get('/update', DashboardController::class, 'update');
 $router->post('/updateAction', DashboardController::class, 'updateAction');
+$router->get('/wikis', DashboardController::class, 'wikis');
+$router->post('/acceptWiki', DashboardController::class, 'acceptWiki');
 // $router->get('/dashboard', DashboardController::class, 'index');
 // $router->get('/user', HomeController::class, 'user');
 
