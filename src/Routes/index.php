@@ -21,8 +21,7 @@ $router->get('/update', DashboardController::class, 'update');
 $router->post('/updateAction', DashboardController::class, 'updateAction');
 $router->get('/wikis', DashboardController::class, 'wikis');
 $router->post('/acceptWiki', DashboardController::class, 'acceptWiki');
-// $router->get('/dashboard', DashboardController::class, 'index');
-// $router->get('/user', HomeController::class, 'user');
+
 
 //tags
 $router->get('/tag', TagsController::class, 'index');
@@ -42,11 +41,10 @@ $router->post('/loginAction', UserController::class, 'loginAction');
 
 //user login
 $router->get('/logout', UserController::class, 'logout');
-// $router->post('/insert', HomeController::class, 'insert');
 
 //wiki 
 $router->get('/add', WikiController::class, 'add');
-// $router->get('/deleteAction', DashboardController::class, 'deleteAction');
+// $router->get('/deleteAction', WikiController::class, 'deleteAction');
 $router->post('/addWikiAction', WikiController::class, 'addWikiAction');
 $router->post('/updateWikiAction', WikiController::class, 'updateWikiAction');
 

@@ -46,10 +46,8 @@ class DashBoardModel extends Model
             $stmt->bindParam(':id', $wikiId, PDO::PARAM_INT);
             $stmt->execute();
 
-            // Get the result set
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Close the statement
             $this->pdo = null;
 
             return $result;
