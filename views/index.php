@@ -13,7 +13,7 @@
 
 <body class="bg-white overflow-x-hidden">
     <?php require_once('includes/header.php'); ?>
-    <div class="relative bg-blue-50 pb-16">
+    <div class="relative bg-blue-50 pb-16 h-[90vh]">
         <div class="container m-auto px-6 pt-32 md:px-12 lg:pt-[4.8rem] lg:px-7">
             <div class="flex items-center flex-wrap px-2 md:px-0 justify-between">
                 <div class="relative lg:w-6/12 lg:py-24 xl:py-32">
@@ -29,10 +29,10 @@
                     <form action="" class="w-full mt-12">
                         <div class="relative flex p-1 rounded-full bg-white  border-blue-200 shadow-md md:p-2">
 
-                            <input placeholder="Your favorite food"
+                            <input placeholder="Your favorite Wikis"
                                 class="w-full p-4 rounded-full outline-none bg-transparent " type="text">
-                            <button type="button" title="Start buying"
-                                class="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-blue-200 to-blue-300 hover:to-blue-400 active:from-blue-400 focus:from-blue-400 md:px-12">
+                            <a href="/search" title="Start buying"
+                                class="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-blue-200 to-blue-300 hover:to-blue-400 active:from-blue-400 focus:from-blue-400 md:px-12 cursor-pointer">
                                 <span class="hidden text-blue-900 font-semibold md:block">
                                     Search
                                 </span>
@@ -41,7 +41,7 @@
                                     <path
                                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -145,8 +145,7 @@
         </div>
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="grid gap-12 md:gap-6 md:grid-cols-2 lg:gap-12">
-                <?php foreach ($wikis as $wiki): ?>
-
+                <?php foreach ($wikis as $wiki): ?>   
                     <div class="cursor-pointer group space-y-6" data-aos="fade-right"
                         data-aos-anchor-placement="right-right" data-aos-duration="1200">
                         <img src="./<?= $wiki['img'] ?>" alt="art cover" loading="lazy" width="1000" height="667"
@@ -165,7 +164,9 @@
                                     <?= $wiki['firstname'] ?>
                                 </span>
                             </a>
-                            <span class="w-max block font-light text-gray-500 sm:mt-0"><?= $wiki['created_at'] ?></span>
+                            <span class="w-max block font-light text-gray-500 sm:mt-0">
+                                <?= $wiki['created_at'] ?>
+                            </span>
                             <div class="flex gap-2 items-center text-gray-500">
                                 <?= $wiki['title'] ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

@@ -84,6 +84,26 @@ class Model
         return $result;
     }
 
+    function slectLike($name)
+    {
+        // Use prepared statements to prevent SQL injection
+        $sql = "SELECT * FROM wikis WHERE title LIKE '%$name%'";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        // Execute the prepared statement
+        $stmt->execute();
+
+        // Get the result set
+        // $result = $stmt->fetchAll();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Close the statement
+        $this->pdo = null;
+
+        return $result;
+    }
+
 
 
     function selectRecordslimitInner($table, $columns = "*", $where = null, $joinTable = null, $joinCondition = null, $limit = null)

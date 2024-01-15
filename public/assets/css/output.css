@@ -793,6 +793,21 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .-ml-1 {
   margin-left: -0.25rem;
 }
@@ -1026,6 +1041,10 @@ video {
 
 .h-\[6rem\] {
   height: 6rem;
+}
+
+.h-\[90vh\] {
+  height: 90vh;
 }
 
 .h-auto {
@@ -3643,10 +3662,6 @@ video {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
   }
 
   .md\:flex-nowrap {

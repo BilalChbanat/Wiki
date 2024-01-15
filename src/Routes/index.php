@@ -9,6 +9,7 @@ use App\Controllers\TagsController;
 use App\Controllers\UserController;
 use App\Controllers\WikiController;
 use App\Controllers\AuthorController;
+use App\Controllers\SearchController;
 
 $router = new Router();
 
@@ -47,6 +48,8 @@ $router->get('/add', WikiController::class, 'add');
 // $router->get('/deleteAction', WikiController::class, 'deleteAction');
 $router->post('/addWikiAction', WikiController::class, 'addWikiAction');
 $router->post('/updateWikiAction', WikiController::class, 'updateWikiAction');
+$router->get('/search', SearchController::class, 'search');
+$router->post('/search', SearchController::class, 'search');
 
 // author 
 $router->get('/DashboardAuthor', AuthorController::class, 'DashboardAuthor');
