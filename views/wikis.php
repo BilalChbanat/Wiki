@@ -63,13 +63,11 @@
 </head>
 
 <body>
-    <!-- =============== Navigation ================ -->
 
     <div class="container">
         <?php
         require_once('includes/dashboardNav.php');
         ?>
-        <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
                 <div class="toggle">
@@ -144,10 +142,8 @@
         </div>
     </div>
 
-    <!-- =========== Scripts =========  -->
     <script src="../public/assets/javascript/main.js"></script>
 
-    <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

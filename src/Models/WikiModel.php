@@ -79,10 +79,6 @@ class WikiModel extends Model
     }
 
 
-
-
-
-
     public function getTagIds()
     {
         try {
@@ -100,8 +96,6 @@ class WikiModel extends Model
             echo $e->getMessage();
         }
     }
-
-
 
 
     public function selectSingleWiki($table, $columns = "*", $where = null)

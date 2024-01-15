@@ -28,9 +28,6 @@ class AuthorModel extends Model
         );
     }
 
-
-
-
     function selectsinglewiki($table, $columns = "*", $where = null)
     {
         return $this->selectSingleRecords($table, $columns = "*", $where = null);

@@ -10,9 +10,7 @@ class AuthorController extends Controller
         $new = new AuthorModel();
         $wikis = $new->show();
 
-
         $this->render('DashboardAuthor', ["wikis" => $wikis]);
-
 
     }
 

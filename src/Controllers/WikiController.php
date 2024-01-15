@@ -7,7 +7,6 @@ use App\Models\AuthorModel;
 class WikiController extends Controller
 {
 
-
     public function index()
     {
         $wikis = new WikiModel();

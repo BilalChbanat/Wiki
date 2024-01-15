@@ -11,8 +11,6 @@
 </head>
 
 <body>
-    <!-- =============== Navigation ================ -->
-
     <div class="container">
         <div class="navigation">
             <ul>
@@ -49,7 +47,6 @@
                 </li>
             </ul>
         </div>
-        <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
                 <div class="toggle">
@@ -67,8 +64,6 @@
                     <img src="./assets/images/uploads/person1.svg" alt="">
                 </div>
             </div>
-
-            <!-- ======================= Cards ================== -->
             <div class="cardBox">
                 <div class="card">
                     <div>
@@ -114,8 +109,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- ================ Order Details List ================= -->
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -170,10 +163,8 @@
         </div>
     </div>
 
-    <!-- =========== Scripts =========  -->
     <script src="../public/assets/javascript/main.js"></script>
 
-    <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

@@ -10,5 +10,4 @@ class HomeModel extends Model
         return $this->selectRecordslimitInner("wikis", "*", "statut = 1", "user", "wikis.user_id = user.id", 5);
     }
 
-
 }

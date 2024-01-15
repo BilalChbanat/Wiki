@@ -14,9 +14,7 @@
     <?php require_once('includes/header.php'); ?>
     <div class="pt-48 pb-12 ">
         <div id="card" class="">
-            <!-- container for all cards -->
             <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
-                <!-- search bar -->
                 <form action="" class="w-full mt-12">
                     <div class="relative flex p-1 rounded-full bg-white  border-blue-200 shadow-md md:p-2">
 
